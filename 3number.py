@@ -1,8 +1,3 @@
-def my_func(a, b, c):
-    d = [a, b, c]
-    d.remove(min(a, b, c))
-    return sum(d)
-
-
-def my_func2():
-    print(my_func(4, 1, 9))
+number_list = [2, 2, 2, 7, 23, 1, 44, 44, 3, 2, 10, 7, 4, 11]
+my_list = [el for el in number_list if number_list.count(el) == 1]
+print(my_list)
