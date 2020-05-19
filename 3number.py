@@ -1,3 +1,11 @@
-number_list = [2, 2, 2, 7, 23, 1, 44, 44, 3, 2, 10, 7, 4, 11]
-my_list = [el for el in number_list if number_list.count(el) == 1]
-print(my_list)
+class Worker:
+    def __init__(self, name='Vasily',surname='Pupkin',position='manager',wage=100, bonus=100):
+        self.name = name
+        self.surname = surname
+        self.position = position
+        self.income={'wage': wage, 'bonus': bonus}
+class Position(Worker):
+    def get_full_name(self):
+        return self.name + self.surname
+    def get_total_income(self):
+        return self.income['bonus'] + self.income['wage']

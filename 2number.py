@@ -1,14 +1,14 @@
 
-for line in open("file.txt", 'r'):
-    lines += 1
-    letters += len(line)
-    pos = 'out'
-    for letter in line:
-        if letter != ' ' and pos == 'out':
-            words += 1
-            pos = 'in'
-        elif letter == ' ':
-            pos = 'out'
-print("Строки", line)
-print("Слова", Words)
-print("Буквы", Letters)
+class Road:
+    def __init__(self, length, width):
+        self._length = length
+        self._width = width
+    def abc (self):
+        a = 80
+        b = 20
+        return print(self._length * self._width * a * b)
+z = Road(20,30)
+z.abc()
+
+
+
