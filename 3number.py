@@ -1,11 +1,28 @@
-class Worker:
-    def __init__(self, name='Vasily',surname='Pupkin',position='manager',wage=100, bonus=100):
-        self.name = name
-        self.surname = surname
-        self.position = position
-        self.income={'wage': wage, 'bonus': bonus}
-class Position(Worker):
-    def get_full_name(self):
-        return self.name + self.surname
-    def get_total_income(self):
-        return self.income['bonus'] + self.income['wage']
+class MyError(Exception):
+    def __init__(self, txt):
+        self.txt = txt
+
+
+def is_number(e):
+    try:
+        float(e)
+        return True
+    except ValueError:
+        return False
+
+
+my_list = []
+while True:
+    el = input('Введите элемент списка. Для прекращения нажмите "q": ')
+    if el == 'q':
+        break
+    try:
+        if not(is_number(el)):
+            raise MyError('Вы ввели не число!')
+    except MyError as err:
+        print(err)
+    else:
+        el = int(el)
+        my_list.append(el)
+
+print(my_list)
