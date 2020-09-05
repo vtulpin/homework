@@ -1,8 +1,11 @@
-def my_func(a, b, c):
-    d = [a, b, c]
-    d.remove(min(a, b, c))
-    return sum(d)
-
-
-def my_func2():
-    print(my_func(4, 1, 9))
+class Worker:
+    def __init__(self, name='Vasily',surname='Pupkin',position='manager',wage=100, bonus=100):
+        self.name = name
+        self.surname = surname
+        self.position = position
+        self.income={'wage': wage, 'bonus': bonus}
+class Position(Worker):
+    def get_full_name(self):
+        return self.name + self.surname
+    def get_total_income(self):
+        return self.income['bonus'] + self.income['wage']
